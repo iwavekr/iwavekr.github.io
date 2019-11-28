@@ -1336,7 +1336,7 @@ svg {
     width: 16px;
     height: 10px;
     position: absolute;
-    background: #00c4f3;
+    background: #58b96b;
     z-index: 5;
     left: 0;
     right: 0;
@@ -1347,7 +1347,7 @@ svg {
   }
   
   .timeline .hexa:before {
-    border-bottom: 4px solid #00c4f3;
+    border-bottom: 4px solid #58b96b;
     border-left-width: 8px;
     border-right-width: 8px;
     top: -4px;
@@ -1356,7 +1356,7 @@ svg {
   .timeline .hexa:after {
     border-left-width: 8px;
     border-right-width: 8px;
-    border-top: 4px solid #00c4f3;
+    border-top: 4px solid #58b96b;
     bottom: -4px;
   }
   
@@ -1429,7 +1429,7 @@ svg {
   }
   
   .time {
-    background: #00c4f3;
+    background: #58b96b;
     display: inline-block;
     padding: 8px;
   }
