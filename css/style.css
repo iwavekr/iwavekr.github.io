@@ -802,11 +802,13 @@ section {
 .customers-container .main_partners_cont > ul > li > img {
     height: 100%;
 }
-.customers-container .main_partners_cont > ul {
-  display: table;
-  margin-left: auto;
-  margin-right: auto;
-}
+
+
+ .customers-container .main_partners_cont > ul {
+    text-align: center;
+    padding: unset;
+ }
+
 
 img {
     border: 0;
