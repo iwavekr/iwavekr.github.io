@@ -11,6 +11,10 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+  </svg>
+  
   <!-- favicon error 처리 -->
   <link rel="shortcut icon" href="#">
   <!-- Vendor CSS Files -->
@@ -85,10 +89,8 @@
   <header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <div class="logo">
+      <div class="logo" style="width: 98px;">
         <h1><a href="index.html"><img src="img/iWave.png" alt="" class="img-fluid"></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav id="navbar" class="navbar">
@@ -458,9 +460,10 @@
           <h2>사업분야</h2>
           <p>고객사/협력사</p>
         </div>
-
         <div class="row customers-container" id="customers">
           <p>고객사</p>
+          <i class="bi bi-arrow-right-square fa-2x" id ="arrowRight" style = "display: none;"></i>
+          <i class="bi bi-arrow-left-square fa-2x" id ="arrowLeft" style = "display: none;"></i>
           <div class="main_partners_cont">
 		  <ul>
 			<li class="wow animate__fadeInDown"><img src="img/customers/logo01.png"></li>
@@ -521,36 +524,33 @@
 			<li><img src="img/customers/logo55.png"></li>
 		  </ul>
 		</div>
-        <div class="row customers-container"  id ="partener" style = "display: none">
-          <p>협력사</p>
-           <ul>  
-            <li  class="wow animate__fadeInDown"><img src="img/partners/logo01.png"></li>
-            <li><img src="img/partners/logo02.png"></li>
-            <li><img src="img/partners/logo03.png"></li>
-            <li><img src="img/partners/logo04.png"></li>
-            <li><img src="img/partners/logo05.png"></li>
-            <li><img src="img/partners/logo06.png"></li>
-            <li><img src="img/partners/logo07.png"></li>
-            <li><img src="img/partners/logo08.png"></li>
-            <li><img src="img/partners/logo09.png"></li>
-            <li><img src="img/partners/logo10.png"></li>
-            <li><img src="img/partners/logo11.png"></li>
-            <li><img src="img/partners/logo12.png"></li>
-            <li><img src="img/partners/logo13.png"></li>
-            <li><img src="img/partners/logo14.png"></li>
-            <li><img src="img/partners/logo15.png"></li>
-            <li><img src="img/partners/logo16.png"></li>
-            <li><img src="img/partners/logo17.png"></li>
-            <li><img src="img/partners/logo18.png"></li>
-            <li><img src="img/partners/logo19.png"></li>
-            <li><img src="img/partners/logo20.png"></li>
-            <li><img src="img/customers/logo01.png"><li>
-            <li><img src="img/customers/logo02.png"><li>
-            <li><img src="img/customers/logo03.png"><li>
-            <li><img src="img/customers/logo04.png"><li>
-           <ul>  
-          </div>
+        <p style = "display: none;">협력사</p>
+        <div class="main_partners_cont" style = "display: none;">
+         <ul>
+			<li class="wow animate__fadeInDown"><img src="img/partners/logo01.png""></li>
+			<li><img src="img/partners/logo02.png"></li>
+			<li><img src="img/partners/logo03.png"></li>
+			<li><img src="img/partners/logo04.png"></li>
+			<li><img src="img/partners/logo05.png"></li>
+			<li><img src="img/partners/logo06.png"></li>
+			<li><img src="img/partners/logo07.png"></li>
+			<li><img src="img/partners/logo08.png"></li>
+			<li><img src="img/partners/logo09.png"></li>
+			<li><img src="img/partners/logo10.png"></li>
+			<li><img src="img/partners/logo11.png"></li>
+			<li><img src="img/partners/logo12.png"></li>
+			<li><img src="img/partners/logo13.png"></li>
+			<li><img src="img/partners/logo14.png"></li>
+			<li><img src="img/partners/logo15.png"></li>
+			<li><img src="img/partners/logo16.png"></li>
+			<li><img src="img/partners/logo17.png"></li>
+			<li><img src="img/partners/logo18.png"></li>
+			<li><img src="img/partners/logo19.png"></li>
+			<li><img src="img/partners/logo20.png"></li>
+         </ul>
         </div>
+       </div>
+      </div>
     </section><!-- End customers Section -->
 
 <!-- ======= customers Section ======= -->
@@ -567,31 +567,29 @@
         </div>
 
         <div class="contact-container" >
+        <div id = "map"  style="width:100%;height:350px;"></div>
             <div class="info">
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
+                <h4>ADDRESS:</h4>
                 <p>대전광역시 중구 계룡로 825 6층 (주)아이웨이브</p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
+                <h4>E-MAIL:</h4>
                 <p><a class="d-block" href="mailto:pm@iwave.kr">pm@iwave.kr</a></p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
+                <h4>TEL:</h4>
                 <p><a href="tel:042-719-8850">042-719-8850</a></p>
               </div>
             </div>
           </div>
       </div>
 </section>
-  <section id="contact" class="map">
-   	<div id = "map"  style="width:100%;height:350px;"></div>
-  </section>
     
 
   </main><!-- End #main -->
@@ -624,7 +622,7 @@
   <script src="vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bbce80fd3a7954f95e8cc0ba73f506b1"></script>
   
