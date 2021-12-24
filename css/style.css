@@ -800,6 +800,7 @@ section {
 
 
 .customers-container .main_partners_cont > ul > li > img {
+	width:100%;
     height: 100%;
 }
 
