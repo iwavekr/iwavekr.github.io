@@ -775,6 +775,7 @@ section {
   background: rgb(246, 246, 247);
 }
 
+
 .main_partners_cont {
     max-width: 1435px;
     margin: 0 auto;
@@ -800,6 +801,11 @@ section {
 
 .customers-container .main_partners_cont > ul > li > img {
     height: 100%;
+}
+.customers-container .main_partners_cont > ul {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 img {
