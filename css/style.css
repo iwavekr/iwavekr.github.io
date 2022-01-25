@@ -846,13 +846,11 @@ img {
 	position: relative;
 }
 
-.wrap_customers ul li:nth-child(n+10){
-	display: none;
-}
-
   #customPlus{
     position: absolute;
+    top:100%;
     left: 50%;
+    vertical-align: middle;
     transform: translate(10px, 10px);
     animation: motion 0.5s 
                linear 0s   

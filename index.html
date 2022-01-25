@@ -40,7 +40,7 @@
 			$(".wrap_customers").children("li:nth-child(n+11)").css("display","none");
 			$("#customPlus").show();
 	    }else{
-			$(".wrap_customers").children("li:nth-child(n+11)").css("display","block");
+			$(".wrap_customers").children("li:nth-child(n+11)").css("display","inline-block");
 			$("#customPlus").hide();
 	    }
 	});
@@ -50,6 +50,9 @@
   		if($(window).width() <= 1000){
 			$(".wrap_customers").children("li:nth-child(n+11)").css("display","none");
 			$("#customPlus").show();
+	    }else{
+	    	$(".wrap_customers").children("li").css("display","inline-block");
+			$("#customPlus").hide();
 	    }
   		//사업실적 년도 별 숨기기
 		$(".year").click(function() {
@@ -115,7 +118,7 @@
 		$(".customMoreView").click(function() {
 			var hiddnRowNum = $(".wrap_customers").children("li:hidden").length;
 			if(hiddnRowNum >0){
-				$(".wrap_customers").children("li").css("display","block");
+				$(".wrap_customers").children("li").css("display","inline-block");
 				$(this).attr("class","fas fa-angle-double-up fa-3x customMoreView");
 				var offset = $(this).offset();
 				
