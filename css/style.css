@@ -849,7 +849,7 @@ img {
   #customPlus{
     position: absolute;
     top:100%;
-    left: 50%;
+    left: 47%;
     vertical-align: middle;
     transform: translate(10px, 10px);
     animation: motion 0.5s 

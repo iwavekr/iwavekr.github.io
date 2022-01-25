@@ -104,11 +104,13 @@
 				$("."+arrHistory[1]).children("li").css("display","block");
 				$(this).attr("class","fas fa-angle-double-up fa-2x moreView");
 				var offset = $(this).offset();
+				offseter = (offset.top)-500;
 				
 			}else{
 				$("."+arrHistory[1]).children("li:nth-child(n+7)").css("display","none");
 				$(this).attr("class","fas fa-angle-double-down fa-2x moreView");
 				var offset = $(this).offset();
+				offseter = (offset.top)-500;
 			}
 	        $('html').animate({scrollTop : (offset.top)-600}, 400);
 		});
@@ -121,13 +123,15 @@
 				$(".wrap_customers").children("li").css("display","inline-block");
 				$(this).attr("class","fas fa-angle-double-up fa-3x customMoreView");
 				var offset = $(this).offset();
+				offseter = (offset.top)-700;
 				
 			}else{
 				$(".wrap_customers").children("li:nth-child(n+11)").css("display","none");
 				$(this).attr("class","fas fa-angle-double-down fa-3x moreView");
 				var offset = $(this).offset();
+				offseter = (offset.top)-750;
 			}
-	        $('html').animate({scrollTop : (offset.top)-600}, 400);
+	        $('html').animate({scrollTop :offseter}, 400);
 		});
 		
   	});
