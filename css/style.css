@@ -460,7 +460,7 @@ section {
   margin: 0 0 5px 0;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #aaaaaa;
+  color: #AE3C4F;
 }
 /*.section-title h2::after {
   content: "";
@@ -739,7 +739,7 @@ section {
 # history
 --------------------------------------------------------------*/
 .history{background: rgb(246, 246, 247)}
-.wrap_year{margin-bottom: 30px;}
+.wrap_year{margin-bottom: 50px;}
 .wrap_year h4{    float: left;
     width: 25%;margin-right: 5%;
     font-weight: 700;
@@ -762,10 +762,19 @@ section {
 /*--------------------------------------------------------------
 # history Details
 --------------------------------------------------------------*/
-
-
-
-
+  .fas{
+    position: absolute;
+    left: 50%;
+    transform: translate(10px, 10px);
+    animation: motion 0.5s 
+               linear 0s   
+               infinite alternate; 
+  }
+  
+  @keyframes motion {
+	0% {margin-top: 0px;} /* 처음 위치 */
+	100% {margin-top: 10px;} /* 마지막 위치 */
+  }
 
 /*--------------------------------------------------------------
 # customers
@@ -836,6 +845,19 @@ img {
 #customers{
 	position: relative;
 }
+
+.wrap_customers ul li:nth-child(n+10){
+	display: none;
+}
+
+  #customPlus{
+    position: absolute;
+    left: 50%;
+    transform: translate(10px, 10px);
+    animation: motion 0.5s 
+               linear 0s   
+               infinite alternate; 
+  }
 
 /*--------------------------------------------------------------
 # Contact

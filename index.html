@@ -32,8 +32,25 @@
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/ee7dafa4cb.js" crossorigin="anonymous"></script>
   <script type="text/javascript">
+  
+	  $(window).resize(function(){ 
+		if($(window).width() <= 1000){
+			$(".wrap_customers").children("li:nth-child(n+11)").css("display","none");
+			$("#customPlus").show();
+	    }else{
+			$(".wrap_customers").children("li:nth-child(n+11)").css("display","block");
+			$("#customPlus").hide();
+	    }
+	});
+	  
   	$(document).ready(function() {
+  		
+  		if($(window).width() <= 1000){
+			$(".wrap_customers").children("li:nth-child(n+11)").css("display","none");
+			$("#customPlus").show();
+	    }
   		//사업실적 년도 별 숨기기
 		$(".year").click(function() {
 			var clickYear = $(this).text();
@@ -74,6 +91,42 @@
 			}
 			
 		});//다음버튼
+		
+		
+		//연혁
+		$(".moreView").click(function() {
+			var arrHistory = $(this).attr("id").split("history");
+			var hiddnRowNum = $("."+arrHistory[1]).children("li:hidden").length;
+			if(hiddnRowNum >0){
+				$("."+arrHistory[1]).children("li").css("display","block");
+				$(this).attr("class","fas fa-angle-double-up fa-2x moreView");
+				var offset = $(this).offset();
+				
+			}else{
+				$("."+arrHistory[1]).children("li:nth-child(n+7)").css("display","none");
+				$(this).attr("class","fas fa-angle-double-down fa-2x moreView");
+				var offset = $(this).offset();
+			}
+	        $('html').animate({scrollTop : (offset.top)-600}, 400);
+		});
+		
+		
+		//고객사
+		$(".customMoreView").click(function() {
+			var hiddnRowNum = $(".wrap_customers").children("li:hidden").length;
+			if(hiddnRowNum >0){
+				$(".wrap_customers").children("li").css("display","block");
+				$(this).attr("class","fas fa-angle-double-up fa-3x customMoreView");
+				var offset = $(this).offset();
+				
+			}else{
+				$(".wrap_customers").children("li:nth-child(n+11)").css("display","none");
+				$(this).attr("class","fas fa-angle-double-down fa-3x moreView");
+				var offset = $(this).offset();
+			}
+	        $('html').animate({scrollTop : (offset.top)-600}, 400);
+		});
+		
   	});
   </script>
   <!-- =======================================================
@@ -274,8 +327,6 @@
               <li> 국가기록원 기술정보관리시스템(DFR) 개선</li>
               <li> 2021년 국가보훈처 인터넷보훈민원시스템 유지보수</li>
               <li> 철도시설 유지보수이력 데이터베이스 구축 및 공간정보시스템 시범구축 용역</li>
-				
-				
               <li> 국무조정실 통합 시스템 운영 및 유지보수</li>
 	          <li> 2020~21년 권익행정정보시스템 유지관리 및 위탁운영</li>
 	          <li> 2021년 행정심판 허브시스템 운영사업</li>
@@ -318,6 +369,7 @@
 	          <li> 행정안전부 정부조직관리 정보시스템 유지관리/AP운영</li>
 	          <li> 행정안전부 기록관리시스템 개발</li>
 	          <li> 행정안전부 안전-생활불편 통합 신고시스템 구축 용역</li>
+			  <i class="fas fa-angle-double-down fa-2x moreView" id="history2021"></i>
             </ul>
             
 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -331,8 +383,6 @@
               <li> 국방과학연구소 정보체계 기능개선 및 고도화(2차)개발</li>
               <li> 국세청 엔티스(NTIS) 운영 및 유지보수사업</li>
               <li> 국세청 취업후학자금상환 전산시스템 고도화사업(분석.설계)</li>
-           
-			             
               <li> 2020년 국세통계 시스템 구축 개발사업</li>
               <li> 2020년 모바일 서비스(손택스)확대 사업</li>
               <li> 2020년 국민권익위원회 행정심판허브시스템 운영</li>
@@ -362,19 +412,18 @@
               <li> 해외문화홍보원 행정지원시스템 운영 및 유지관리</li>
               <li> 2020년 행정안전부 MDMS시스템 유지관리</li>
               <li> KAIST 통합IT시스템 유지관리 및 위탁운영</li>
+              <i class="fas fa-angle-double-down fa-2x moreView" id="history2020"></i>
             </ul>
         </div>
 
         <div class="wrap_year">
-            <h4 class="year" data-aos="zoom-in-left">2019</h4>
+            <h4 class="year" data-aos="zoom-in-left" >2019</h4>
             <ul class="2019" data-aos="zoom-in-left">
               <li> 전력SW 플랫폼 2단계 개발</li>
               <li> 한국화학연구원 차세대 통합정보시스템 개발</li>
               <li> 근로장려금 확대 및 반기 지급 시스템 개발</li>
               <li> 차세대 지방교육행,재정 통합시스템 구축 </li>
               <li> 국세청 엔티스(NTIS) 운영 및 유지보수</li>
-
-
               <li> K-water 실시간 수도정보시스템 고도화 개발</li>
               <li> 대통령기록물 정보화시스템 통합유지보수</li>
               <li> 철도시설 이력관리 종합정보시스템 구축</li>
@@ -396,6 +445,7 @@
               <li> 철도시설 유지보수이력 데이터베이스 및 공간정보시스템 시범 구축</li>
               <li> 연구비집행 통합모니터링 시스템 구축</li>
               <li> 대통령기록포털 서비스 강화 사업</li>
+			  <i class="fas fa-angle-double-down fa-2x moreView" id="history2019"></i>
             </ul>
         </div>
 
@@ -407,8 +457,6 @@
               <li> 국세청 NTS 운영 및 유지보수</li>
               <li> 차세대 임대주택관리시스템 구축</li>
               <li> 정부청사관리본부 정보시스템 통합유지보수</li>
-
-
               <li> 롯데멤버스 유지보수</li>
               <li> 차세대 의약품통합정보시스템 구축</li>
               <li> 국세청 엔티스(ntis) 신규개발 통합</li>
@@ -426,6 +474,7 @@
               <li> 축산물품질평가원 차세대 이력제 시스템 구축</li>
               <li> 국방과학연구소 정보체계 통합유지관리</li>
               <li> 범부처 연구비 통합 관리시스템 구축</li>
+			  <i class="fas fa-angle-double-down fa-2x moreView" id="history2018"></i>
             </ul>
         </div>
 
@@ -437,8 +486,6 @@
               <li> 신협중앙회 비대면 실명인증 시스템 구축</li>
               <li> 연구비 집행 통합모니터링 시스템 구축</li>
               <li> 국민신문고 시스템 기능 고도화</li>
-
-
               <li> 산림청 스마트 산림 재해</li>
               <li> 문화재청 문화유산 정보서비스 개발</li>
               <li> 다국어포털 및 홈페이지 G-클라우드 전환</li>
@@ -447,6 +494,7 @@
               <li> 산림조합중앙회 통합 단말 구축</li> 
               <li> KT클릭카드 유지보수</li>
               <li> 신협중앙회 프로젝트 관리시스템 구축</li>
+			  <i class="fas fa-angle-double-down fa-2x moreView" id="history2017"></i>
             </ul>
         </div>
        </div>
@@ -463,10 +511,8 @@
           <p>고객사</p>
         </div>
         <div class="row customers-container" id="customers">
-          <i class="bi bi-arrow-right-square fa-2x" id ="arrowRight" style = "display: none;"></i>
-          <i class="bi bi-arrow-left-square fa-2x" id ="arrowLeft" style = "display: none;"></i>
           <div class="main_partners_cont">
-		  <ul>
+		  <ul class="wrap_customers" >
 			<li class="wow animate__fadeInDown"><img src="img/customers/logo01.png"></li>
 			<li><img src="img/customers/logo02.png"></li>
 			<li><img src="img/customers/logo03.png"></li>
@@ -523,33 +569,9 @@
 			<li><img src="img/customers/logo53.png"></li>
 			<li><img src="img/customers/logo54.png"></li>
 			<li><img src="img/customers/logo55.png"></li>
+			 <i class="fas fa-angle-double-down fa-3x customMoreView" id="customPlus" style="display:none;"></i>
 		  </ul>
 		</div>
-        <p style = "display: none;">협력사</p>
-        <div class="main_partners_cont" style = "display: none;">
-         <ul>
-			<li class="wow animate__fadeInDown"><img src="img/partners/logo01.png""></li>
-			<li><img src="img/partners/logo02.png"></li>
-			<li><img src="img/partners/logo03.png"></li>
-			<li><img src="img/partners/logo04.png"></li>
-			<li><img src="img/partners/logo05.png"></li>
-			<li><img src="img/partners/logo06.png"></li>
-			<li><img src="img/partners/logo07.png"></li>
-			<li><img src="img/partners/logo08.png"></li>
-			<li><img src="img/partners/logo09.png"></li>
-			<li><img src="img/partners/logo10.png"></li>
-			<li><img src="img/partners/logo11.png"></li>
-			<li><img src="img/partners/logo12.png"></li>
-			<li><img src="img/partners/logo13.png"></li>
-			<li><img src="img/partners/logo14.png"></li>
-			<li><img src="img/partners/logo15.png"></li>
-			<li><img src="img/partners/logo16.png"></li>
-			<li><img src="img/partners/logo17.png"></li>
-			<li><img src="img/partners/logo18.png"></li>
-			<li><img src="img/partners/logo19.png"></li>
-			<li><img src="img/partners/logo20.png"></li>
-         </ul>
-        </div>
        </div>
       </div>
     </section><!-- End customers Section -->
@@ -595,23 +617,6 @@
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      
-      <div class="copyright">
-        &copy; Copyright <strong><span>(주)아이웨이브</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/selecao-bootstrap-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
-
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
@@ -621,6 +626,7 @@
   <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="vendor/swiper/swiper-bundle.min.js"></script>
   <script src="vendor/php-email-form/validate.js"></script>
+
 
   <!-- Template Main JS File -->
   <script src="js/main.js"></script>
