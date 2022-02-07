@@ -40,7 +40,7 @@
 			$(".wrap_customers").children("li:nth-child(n+11)").css("display","none");
 			$("#customPlus").show();
 	    }else{
-			$(".wrap_customers").children("li:nth-child(n+11)").css("display","inline-block");
+			$(".wrap_customers").children("li").css("display","inline-block");
 			$("#customPlus").hide();
 	    }
 	});
@@ -97,20 +97,18 @@
 		
 		
 		//연혁
-		$(".moreView").click(function() {
+		$(".expendBtn").click(function() {
 			var arrHistory = $(this).attr("id").split("history");
 			var hiddnRowNum = $("."+arrHistory[1]).children("li:hidden").length;
 			if(hiddnRowNum >0){
 				$("."+arrHistory[1]).children("li").css("display","block");
-				$(this).attr("class","fas fa-angle-double-up fa-2x moreView");
+				$(this).text("숨기기");
 				var offset = $(this).offset();
-				offseter = (offset.top)-500;
 				
 			}else{
 				$("."+arrHistory[1]).children("li:nth-child(n+7)").css("display","none");
-				$(this).attr("class","fas fa-angle-double-down fa-2x moreView");
+				$(this).text("더보기");
 				var offset = $(this).offset();
-				offseter = (offset.top)-500;
 			}
 	        $('html').animate({scrollTop : (offset.top)-600}, 400);
 		});
@@ -121,17 +119,15 @@
 			var hiddnRowNum = $(".wrap_customers").children("li:hidden").length;
 			if(hiddnRowNum >0){
 				$(".wrap_customers").children("li").css("display","inline-block");
-				$(this).attr("class","fas fa-angle-double-up fa-3x customMoreView");
+				$(this).attr("class","fas fa-angle-double-up fa-2x moreView");ㅍ
 				var offset = $(this).offset();
-				offseter = (offset.top)-700;
 				
 			}else{
 				$(".wrap_customers").children("li:nth-child(n+11)").css("display","none");
 				$(this).attr("class","fas fa-angle-double-down fa-3x moreView");
 				var offset = $(this).offset();
-				offseter = (offset.top)-750;
 			}
-	        $('html').animate({scrollTop :offseter}, 400);
+	        $('html').animate({scrollTop : (offset.top)-600}, 400);
 		});
 		
   	});
@@ -146,7 +142,7 @@
 
 <body>
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center  header-transparent" style="position: absolute;">
+  <header id="header" class="fixed-top d-flex align-items-center  header-transparent" style="position: fixed;">
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo" style="width: 98px;">
@@ -158,7 +154,7 @@
           <li><a class="nav-link scrollto" href="#services">사업분야</a></li>
           <li><a class="nav-link scrollto" href="#portfolio_title">사업소개</a></li>
           <li><a class="nav-link scrollto" href="#history">연혁</a></li>
-          <li><a class="nav-link scrollto" href="#customer">고객사/협력사</a></li>
+          <li><a class="nav-link scrollto" href="#customer">고객사</a></li>
           <li><a class="nav-link scrollto" href="#contact">오시는길</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -174,8 +170,8 @@
       <!-- Slide 1 -->
       <div class="carousel-item active">
         <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">RIDE THE <span>IWAVE</span> TO SUCCESS</h2>
-          <p class="animate__animated fanimate__adeInUp">   경쟁력 있는 기술, 전문성 있는 인재, 신뢰할 수 있는 기업을 긴밀하게 연결합니다.
+           <h2 class="animate__animated animate__fadeInDown">RIDE A WAVE OF SUCCESS WITH <img src="img/iWave.png" alt=""  style="width: 16%;display: inline-block;height: 41%;padding-bottom: 10px;"></h2>
+          <p class="animate__animated animate__fadeInUp">   경쟁력 있는 기술, 전문성 있는 인재, 신뢰할 수 있는 기업을 긴밀하게 연결합니다.
           <br>아이웨이브는 함께 하는 모두의 성공을 향한 꾸준하고 믿음직한 파도가 되겠습니다.</p>
           <a href="#portfolio_title" class="btn-get-started animate__animated animate__fadeInUp scrollto">더 알아보기</a>
         </div>
@@ -205,20 +201,20 @@
      <!-- ======= services Section ======= -->
 <section id="services" class="services icon_box">
       <div class="container">
-        <div class="section-title" data-aos="zoom-out">
+        <div class="section-title">
           <h2>사업소개</h2>
           <p>사업분야</p>
         </div>
         <div class="row">
           <div class="col-lg-3 col-md-5">
-            <div class="icon-box" data-aos="zoom-in-left">
+            <div class="icon-box">
               <div class="icon icon01"></div>
               <h4 class="title">SI</h4>
               <p class="description">공공기관, 연구소, 기업 등 다양한 업무환경에 맞는 최적의 IT 시스템을 제공합니다.</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-5 mt-5 mt-md-0">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="100">
+            <div class="icon-box">
               <div class="icon icon02"></div>
               <h4 class="title">SM</h4>
               <p class="description">장애 처리 및 문제 해결에 대한 풍부한 경험으로 효율적인 통합 관리 서비스를 제공합니다.</p>
@@ -226,14 +222,14 @@
           </div>
 
           <div class="col-lg-3 col-md-5 mt-5 mt-lg-0 ">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="200">
+            <div class="icon-box">
               <div class="icon icon03"></div>
               <h4 class="title">CONSULTING</h4>
               <p class="description">축적된 노하우와 네트워크를 바탕으로 전략 수립 및 프로세스 혁신에 신뢰할 수 있는 정보를 제공합니다.</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-5 mt-5 mt-lg-0">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="300">
+            <div class="icon-box">
               <div class="icon icon04"></div>
               <h4 class="title">EDUCATION</h4>
               <p class="description">신입 SW 엔지니어 육성과 현업 SW 엔지니어 향상을 위한 최적의 교육 프로그램을 제공합니다.</p>
@@ -243,24 +239,21 @@
       </div>
     </section>
      <!-- ======= portfolio Section ======= -->
-    <section id="portfolio_title" class="portfolio_title" style="padding-bottom: 20px;">
+    <section id="portfolio_title" class="portfolio_title">
       <div class="container">
-        <div class="section-title" data-aos="zoom-out">
+        <div class="section-title">
           <h2>사업소개</h2>
           <p>구축사례</p>
         </div>
-      </div>
-    </section>
-    <div class="portfolio_bg">
-      <div class="bg1"></div><div class="bg2"></div>
-      <div id="portfolio" class="portfolio" style="margin-top: 0;">
-  
-        <div class="wrap_solution" data-aos="zoom-in-left">
-          <div class="slide_solution">
-            <div class="bx-wrapper">
-              <ul>
-                <li class="solution01" >
-                  <a href="https://www.safekorea.go.kr/idsiSFK/neo/main/main.html">
+        <div class="portfolio_bg">
+          <div class="bg1"></div><div class="bg2"></div>
+      	  <div id="portfolio" class="portfolio" style="margin-top: 0;">
+            <div class="wrap_solution">
+              <div class="slide_solution">
+                <div class="bx-wrapper">
+                  <ul>
+                    <li class="solution01" >
+                    <a href="https://www.safekorea.go.kr/idsiSFK/neo/main/main.html">
                     <div class="ss_txt">
                       <em>행정안전부</em>
                       <strong>국민재난안전포털</strong>
@@ -268,29 +261,29 @@
                       , 여름철 물놀이, 식중독 등의 생활안전행동요령에 대한 정보를 제공하는 시스템</span>
                       <i class="ss_more">홈페이지 바로가기</i>
                      </div>
-                  </a>
-                   <div class="ss_thum"></div>
-                </li>
-                <li class="solution02" style="display: none;">
-                  <a href="https://www.safetyreport.go.kr/#main">
+                    </a>
+                     <div class="ss_thum"></div>
+                    </li>
+                   <li class="solution02" style="display: none;">
+                    <a href="https://www.safetyreport.go.kr/#main">
                     <div  class="ss_txt">
                       <em>행정안전부</em>
                       <strong>안전신문고 신고시스템</strong>
                       <span>안전에 관련된 민원 또는 불법행위에 대하여 신고.처리가능한 시스템</span>
                       <i class="ss_more">홈페이지 바로가기</i>
                      </div>
-                  </a>
-                   <div class="ss_thum"></div>
-                </li>
-                <li class="solution03"style="display: none;">
-                  <a href="https://www.komsco.com/kor">
-                    <div class="ss_txt">
+                    </a>
+                    <div class="ss_thum"></div>
+                   </li>
+                   <li class="solution03"style="display: none;">
+                   <a href="https://www.komsco.com/kor">
+                     <div class="ss_txt">
                       <em>한국조폐공사</em>
                       <strong>모바일 운전면허증 서비스</strong>
                       <span>모바일 신분증으로 간편하고 안전한 신원정보 제공으로 온.오프라인에서 신원증명 가능한 서비스</span>
                       <i class="ss_more">홈페이지 바로가기</i>
                      </div>
-                  </a>
+                   </a>
                    <div class="ss_thum"></div>
                 </li>
                 <li class="solution04"style="display: none;">
@@ -302,33 +295,41 @@
                       <i class="ss_more">홈페이지 바로가기</i>
                     </div>
                   </a>
-                   <div class="ss_thum"></div>
+                  <div class="ss_thum"></div>
                 </li>
-
               </ul>
+      		    </div>
+      		  </div>
             </div>
-
           </div>
-        </div>
-       </div>
        <div class="control_box">
               <a class="bx-prev">이전</a>
               <a class="bx-next">다음</a>
       </div>
     </div>
-
+    </section>
 
 <section id="history" class="history">
       <div class="container">
 
-       <div class="section-title" data-aos="zoom-out">
+       <div class="section-title">
           <h2>사업소개</h2>
           <p>연혁</p>
         </div>
         <div class="row history-container" >
           <div class="wrap_year">
-            <h4 class="year" data-aos="zoom-in-left" >2021</h4>
-            <ul class="2021" data-aos="zoom-in-left">
+            <h4 class="year" >2022</h4>
+            <ul class="2022">
+              <li> 국가보훈처 인터넷보훈민원시스템 기능개선</li>
+              <li> 2022년 국가보훈처 인터넷보훈시스템(ERMS) 유지보수</li>
+              <li> 한국전기안전공사 자금 본사 집중지출 및 관리시스템 구축</li>
+              <li> 2022년 ITFIND 대외서비스 운영ㆍ유지보수사업 </li>
+            </ul>
+			<div class ="expendBtn"  id="history2022" style="display: none;" >더보기</div>
+          </div>
+          <div class="wrap_year">
+            <h4 class="year" >2021</h4>
+            <ul class="2021">
               <li> BNK저축은행 스마트 뱅킹앱 고도화</li>
               <li> 고용노동부 전산시스템 유지보수 용역</li>
               <li> 국가기록원 기술정보관리시스템(DFR) 개선</li>
@@ -376,15 +377,13 @@
 	          <li> 행정안전부 정부조직관리 정보시스템 유지관리/AP운영</li>
 	          <li> 행정안전부 기록관리시스템 개발</li>
 	          <li> 행정안전부 안전-생활불편 통합 신고시스템 구축 용역</li>
-			  <i class="fas fa-angle-double-down fa-2x moreView" id="history2021"></i>
             </ul>
-            
-<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+			<div class ="expendBtn"  id="history2021">더보기</div>
           </div>
 
           <div class="wrap_year">
-            <h4 class="year" data-aos="zoom-in-left">2020</h4>
-            <ul class="2020" data-aos="zoom-in-left">
+            <h4 class="year">2020</h4>
+            <ul class="2020">
               <li> 2020년 NRF  정보시스템 통합 위탁운영</li>
               <li> 2020년 고용노동통계조사 정보시스템 유지관리 및 위탁사업</li>
               <li> 국방과학연구소 정보체계 기능개선 및 고도화(2차)개발</li>
@@ -419,13 +418,13 @@
               <li> 해외문화홍보원 행정지원시스템 운영 및 유지관리</li>
               <li> 2020년 행정안전부 MDMS시스템 유지관리</li>
               <li> KAIST 통합IT시스템 유지관리 및 위탁운영</li>
-              <i class="fas fa-angle-double-down fa-2x moreView" id="history2020"></i>
             </ul>
+			<div class ="expendBtn"  id="history2020">더보기</div>
         </div>
 
         <div class="wrap_year">
-            <h4 class="year" data-aos="zoom-in-left" >2019</h4>
-            <ul class="2019" data-aos="zoom-in-left">
+            <h4 class="year" >2019</h4>
+            <ul class="2019">
               <li> 전력SW 플랫폼 2단계 개발</li>
               <li> 한국화학연구원 차세대 통합정보시스템 개발</li>
               <li> 근로장려금 확대 및 반기 지급 시스템 개발</li>
@@ -452,13 +451,13 @@
               <li> 철도시설 유지보수이력 데이터베이스 및 공간정보시스템 시범 구축</li>
               <li> 연구비집행 통합모니터링 시스템 구축</li>
               <li> 대통령기록포털 서비스 강화 사업</li>
-			  <i class="fas fa-angle-double-down fa-2x moreView" id="history2019"></i>
             </ul>
+			<div class ="expendBtn" id="history2019">더보기</div>
         </div>
 
         <div class="wrap_year">
-            <h4 class="year" data-aos="zoom-in-left">2018</h4>
-            <ul class="2018" data-aos="zoom-in-left">
+            <h4 class="year">2018</h4>
+            <ul class="2018">
               <li> 문화재청 문화유산 정보서비스 개발</li>
               <li> 전기안전공사 SLA기반 정보시스템 통합 유지관리</li>
               <li> 국세청 NTS 운영 및 유지보수</li>
@@ -481,13 +480,13 @@
               <li> 축산물품질평가원 차세대 이력제 시스템 구축</li>
               <li> 국방과학연구소 정보체계 통합유지관리</li>
               <li> 범부처 연구비 통합 관리시스템 구축</li>
-			  <i class="fas fa-angle-double-down fa-2x moreView" id="history2018"></i>
             </ul>
+			<div class ="expendBtn" id="history2018">더보기</div>
         </div>
 
         <div class="wrap_year">
-            <h4 class="year" data-aos="zoom-in-left">2017</h4>
-            <ul class="2017" data-aos="zoom-in-left">
+            <h4 class="year">2017</h4>
+            <ul class="2017">
               <li> 차세대 의약품통합정보시스템 구축</li>
               <li> 국세청 엔티스(NTIS)신규개발 통합</li>
               <li> 신협중앙회 비대면 실명인증 시스템 구축</li>
@@ -501,8 +500,8 @@
               <li> 산림조합중앙회 통합 단말 구축</li> 
               <li> KT클릭카드 유지보수</li>
               <li> 신협중앙회 프로젝트 관리시스템 구축</li>
-			  <i class="fas fa-angle-double-down fa-2x moreView" id="history2017"></i>
             </ul>
+			<div class ="expendBtn" id="history2017">더보기</div>
         </div>
        </div>
 
@@ -513,14 +512,16 @@
 <!-- ======= customers Section ======= -->
     <section id="customer" class="customers">
       <div class="container">
-        <div class="section-title" data-aos="zoom-out">
+        <div class="section-title">
           <h2>사업분야</h2>
           <p>고객사</p>
         </div>
         <div class="row customers-container" id="customers">
           <div class="main_partners_cont">
 		  <ul class="wrap_customers" >
-			<li class="wow animate__fadeInDown"><img src="img/customers/logo01.png"></li>
+			<li class="wow animate__fadeInDown"><img src="img/customers/logo55.png"></li>
+			<li><img src="img/customers/logo56.png"></li>
+			<li><img src="img/customers/logo01.png"></li>
 			<li><img src="img/customers/logo02.png"></li>
 			<li><img src="img/customers/logo03.png"></li>
 			<li><img src="img/customers/logo04.png"></li>
@@ -575,9 +576,8 @@
 			<li><img src="img/customers/logo52.png"></li>
 			<li><img src="img/customers/logo53.png"></li>
 			<li><img src="img/customers/logo54.png"></li>
-			<li><img src="img/customers/logo55.png"></li>
-			 <i class="fas fa-angle-double-down fa-3x customMoreView" id="customPlus" style="display:none;"></i>
 		  </ul>
+			<i class="fas fa-angle-double-down fa-3x customMoreView" id="customPlus" style="display:none;"></i>
 		</div>
        </div>
       </div>
@@ -591,7 +591,7 @@
     <section id="contact" class="contact">
       <div class="container">
 
-        <div class="section-title" data-aos="zoom-out">
+        <div class="section-title">
           <h2></h2>
           <p>오시는길</p>
         </div>
