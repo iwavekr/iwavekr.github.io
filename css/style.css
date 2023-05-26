@@ -1150,7 +1150,7 @@ section {
 
 .slide_solution ul li {list-style: none; display: block;position: relative; }
 .slide_solution ul li a{ color: #fff; }
-.slide_solution ul li a .ss_txt {text-align: center;}
+.slide_solution ul li a .ss_txt {text-align: left;}
 .slide_solution ul li a .ss_txt em{font-size: 36px; display: block;}
 .slide_solution ul li a .ss_txt strong{
     margin-left: 13px;
@@ -1174,10 +1174,10 @@ section {
 .slide_solution ul .ss_thum{/*width: 700px;height: 344px;width: 800px;height: 393px;*/width: 750px;height: 366px;position: absolute;top: -82px; left: 525px;
   box-shadow: 0 10px 30px 0 rgb(48 49 51 / 23%);
  background-size: cover; background-repeat: no-repeat; background-position:top;}
-.slide_solution ul .solution01 .ss_thum{ background-image: url('../img/portfolio/ITFIND.png');}
-.slide_solution ul .solution02 .ss_thum{ background-image: url('../img/portfolio/safeReport.png');}
-.slide_solution ul .solution03 .ss_thum{ background-image: url('../img/portfolio/KOMSCO.png');}
-.slide_solution ul .solution04 .ss_thum{ background-image: url('../img/portfolio/IRIS.png');}
+.slide_solution ul .solution01 .ss_thum{ background-image: url('../img/portfolio/Ezbaro.png');}
+.slide_solution ul .solution02 .ss_thum{ background-image: url('../img/portfolio/RCMS.png');}
+.slide_solution ul .solution03 .ss_thum{ background-image: url('../img/portfolio/UNIPASS.png');}
+.slide_solution ul .solution04 .ss_thum{ background-image: url('../img/portfolio/SafeReport.png');}
 
 
 
