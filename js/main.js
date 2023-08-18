@@ -21,14 +21,16 @@ $(function() {
     
         const swiper3 = new Swiper(".partner_swiper", {
           slidesPerView: 1,
-          spaceBetween: 30,
+          spaceBetween: 20,
           // Navigation arrows
-//          navigation: {
-//            nextEl: ".partner_sec .swiper-button-next",
-//            prevEl: ".partner_sec .swiper-button-prev",
-//          },
+          navigation: {
+            nextEl: ".partner_sec .swiper-button-next",
+            prevEl: ".partner_sec .swiper-button-prev",
+          },
           observer: true,
           observeParents: true,
+//          slidesOffsetBefore: 50,
+//          slidesOffsetAfter: 50,
           pagination: {
             el: ".partner_sec  .swiper-pagination",
             type: "bullets",
