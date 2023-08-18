@@ -21,7 +21,7 @@ $(function() {
     
         const swiper3 = new Swiper(".partner_swiper", {
           slidesPerView: 1,
-          spaceBetween: 20,
+          spaceBetween: 30,
           // Navigation arrows
 //          navigation: {
 //            nextEl: ".partner_sec .swiper-button-next",
