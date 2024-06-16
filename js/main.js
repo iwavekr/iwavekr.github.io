@@ -46,6 +46,7 @@ $(function() {
     
     const swiper2 = new Swiper(".solution_swiper", {
         loop: true,
+		initialSlide:1,
         navigation: {
             nextEl: ".solution_sec .swiper-button-next",
             prevEl: ".solution_sec .swiper-button-prev",
